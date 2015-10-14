@@ -10,7 +10,7 @@ model_to_model :astmTriggers2kdm0 do |t|
             :model     => 'KDMextraction/models/resultadoTriggers.xmi'  
 
   t.targets :package   => 'kdm',
-            :metamodel => '../Grammar2Model.KDM/model/kdm.ecore',
+            :metamodel => 'metamodels/kdm.ecore',
             :model     => 'KDMextraction/models/resultadoKDMTriggers.xmi'  
 
   t.parameters :create_segments => true
@@ -24,7 +24,7 @@ model_to_model :astmDDL2kdm0 do |t|
             :model     => 'KDMextraction/models/resultadoDDL.xmi'  
 
   t.targets :package   => 'kdm',
-            :metamodel => '../Grammar2Model.KDM/model/kdm.ecore',
+            :metamodel => 'metamodels/kdm.ecore',
             :model     => 'KDMextraction/models/resultadoKDMDDL.xmi'  
             
   t.parameters :create_segments => true
@@ -42,7 +42,7 @@ model_to_model :astm2kdm do |t|
             :model     => ['KDMextraction/models/resultadoDDL.xmi'] 
 
   t.targets :package   => 'kdm',
-            :metamodel => '../Grammar2Model.KDM/model/kdm.ecore',
+            :metamodel => 'metamodels/kdm.ecore',
             :model     => 'KDMextraction/models/resultadoKDM.xmi'  
 #t.debug_mode
   t.transformation 'KDMextraction/transformations/join.rb'
@@ -50,7 +50,7 @@ end
 
 model_to_model :metrics do |t|
   t.sources :package   => 'kdm',
-            :metamodel => '../Grammar2Model.KDM/model/kdm.ecore',
+            :metamodel => 'metamodels/kdm.ecore',
             :model     => 'KDMextraction/models/resultadoKDM.xmi'  
 
   t.targets :package   => 'metrics',
