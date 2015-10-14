@@ -1,0 +1,18 @@
+<project name="ModelExtraction_MSSQL" default="main" basedir=".">
+	
+	<target name="declare">
+		<taskdef name="rubytl.configure" classname="gts.rubytl.launching.core.ant.ConfigureTask" loaderRef="rubytl" classpath="lib/gts.rubytl.launching.core.jar" />
+		<taskdef name="rubytl.rakefile" classname="gts.rubytl.launching.core.ant.RakefileTask" loaderRef="rubytl" classpath="lib/gts.rubytl.launching.core.jar" />
+	</target>
+
+	<target name="main" depends="declare">
+		
+		<rubytl.rakefile ruby="ruby" rubytl="C:\rubytl">
+			<raketask name="astmDDL2kdm0" />
+			<project path="C:\Users\martyn.ellison\workspace-old\Grammar2Model.examples.PLSQL2ASTMModel " />
+			<rakefile path="KDMextraction\tasks\m2m.rake" />
+		</rubytl.rakefile>
+		
+	</target>
+	
+</project>

@@ -3,29 +3,27 @@
      Version: 0.3 
      Description: THis build file incorporates the target for supporting extensions
 -->
-<project name="G2Ge" default="onlyPhaseTwo">
+<project name="G2Ge" default="build">
 
 	<!-- GENERAL PROPERTIES -->
 	<!-- Binaries directory -->
-    <property name="binDir" value="bin"/>
+    <property name="binDir" value="ASTMextraction\bin"/>
 	<!-- Generated files directory -->
-    <property name="genDir" value="gen"/>
+    <property name="genDir" value="ASTMextraction\gen"/>
 	<!-- Source files directory -->
-    <property name="srcDir" value="src"/>
-	<!-- Extension files directory -->
-    <property name="extDir" value="extensions"/>
+    <property name="srcDir" value="ASTMextraction\src"/>
 	<!-- Metamodels directory -->
-    <property name="metamodelsDir" value="../metamodels"/>
+    <property name="metamodelsDir" value="metamodels"/>
 	<!-- Templates directory -->
-    <property name="templatesDir" value="templates"/>
+    <property name="templatesDir" value="ASTMextraction\templates"/>
 	<!-- Extensions directory -->
-    <property name="extensionsDir" value="extensions"/>
+    <property name="extensionsDir" value="ASTMextraction\extensions"/>
 	
 	<!-- PROPERTIES TO CONVERG G INTO Ge -->
 	<!-- Original grammar -->
-    <property name="grammar" value="${srcDir}/PLSQL3.g3"/>
+    <property name="grammar" value="${srcDir}/DDL.g3"/>
 	<!-- Enriched grammar -->
-    <property name="grammarE" value="${genDir}/PLSQL3.ge3"/>
+    <property name="grammarE" value="${genDir}/DDL.ge3"/>
 	<!-- Template used to enrich the grammar (dont change) -->
     <property name="templates" value="${templatesDir}/G2Ge.stg"/>
 
@@ -43,30 +41,30 @@
 	
 	<!-- PROPERTIES TO THE INTERPRETER -->
 	<!-- Name of the grammar -->
-    <property name="grammarName" value="PLSQL3"/>
+    <property name="grammarName" value="DDL"/>
 	<!-- Name of the main rule of the grammar -->
-    <property name="grammarMainRule" value="start_rule"/>
+    <property name="grammarMainRule" value="data_definition"/>
 	<!-- Gra2MoL definition -->
-    <property name="sourceView" value="${srcDir}/extractASTM.g2m"/>
+    <property name="sourceView" value="${srcDir}/extractASTMFromDDL.g2m"/>
 	<!-- Path to target metamodel -->
     <property name="pathMetamodel" value="${metamodelsDir}/astm.ecore"/>
 	<!-- Name of the target metamodel -->
     <property name="targetMetamodel" value="astm"/>
 	<!-- Path to result target model -->
-    <property name="resultInterpreter" value="resultadoTriggers.xmi"/>
+    <property name="resultInterpreter" value="resultadoDDL.xmi"/>
 
     <path id="path.taskdef">
-    	<pathelement location="./lib/antlr-2.7.7.jar"/>
-    	<pathelement location="./lib/antlr-3.0.1.jar"/>
-    	<pathelement location="./lib/antlr-runtime-3.0.1.jar"/>
-    	<pathelement location="./lib/antlr3-antTask.jar"/>
-    	<pathelement location="./lib/stringtemplate-3.1b1.jar"/>
-    	<pathelement location="./lib/org.eclipse.emf.common_2.3.0.v200706262000.jar"/>
-        <pathelement location="./lib/org.eclipse.emf.ecore.xmi_2.3.0.v200706262000.jar"/>
-    	<pathelement location="./lib/org.eclipse.emf.ecore_2.3.0.v200706262000.jar"/>
-     	<pathelement location="./lib/gts.modernization.grammar2Model.antTasks.jar"/>
-     	<pathelement location="./lib/gts.modernization.grammar2Model.jar"/>
-     	<pathelement location="./lib/org.eclipse.gmt.modisco.jar"/>
+    	<pathelement location="lib/antlr-2.7.7.jar"/>
+    	<pathelement location="lib/antlr-3.0.1.jar"/>
+    	<pathelement location="lib/antlr-runtime-3.0.1.jar"/>
+    	<pathelement location="lib/antlr3-antTask.jar"/>
+    	<pathelement location="lib/stringtemplate-3.1b1.jar"/>
+    	<pathelement location="lib/org.eclipse.emf.common_2.3.0.v200706262000.jar"/>
+        <pathelement location="lib/org.eclipse.emf.ecore.xmi_2.3.0.v200706262000.jar"/>
+    	<pathelement location="lib/org.eclipse.emf.ecore_2.3.0.v200706262000.jar"/>
+     	<pathelement location="lib/gts.modernization.grammar2Model.antTasks.jar"/>
+     	<pathelement location="lib/gts.modernization.grammar2Model.jar"/>
+     	<pathelement location="lib/org.eclipse.gmt.modisco.jar"/>
      	<pathelement location="${binDir}/."/>
    	</path>
 		
@@ -154,14 +152,14 @@
 					caseSensitive="true">
 			<!-- Filter the files to intepreter -->
 			<!-- <fileset dir="${srcDir}" includes="prueba.sql"/>-->
-			<fileset dir="../plsql-files" includes="*.sql"/>
+			<fileset dir="plsql-files" includes="NEW_NOTGESTI_CONVO.sql"/>
 		</Gra2MoLDinamicInterpreter>
 	</target>
 	
 
 	<target name="onlyPhaseTwo"
 		description="This second phase executes the interpreter of Gra2MoL with a CST created previously">
-		
+				
 		<!-- PHASE TWO -->
 		<echo>Executing Phase 2</echo>
 		<!-- Interpreter of Gra2MoL -->
@@ -178,7 +176,7 @@
 	<target name="checkExtensions">
 		<echo>Checking extensions...</echo>
 		<condition property="extensionsExist">
-			<available file="${extDir}" type="dir"/>
+			<available file="${extensionsDir}" type="dir"/>
 		</condition>
 	</target>
 	
