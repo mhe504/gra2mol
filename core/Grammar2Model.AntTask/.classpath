@@ -2,20 +2,19 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Grammar2Model"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Grammar2Model.CST.CDO"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Grammar2Model.Gra2MoL"/>
-	<classpathentry kind="lib" path="lib/antlr-3.2.jar"/>
-	<classpathentry kind="lib" path="lib/ant.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.gmt.modisco.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.emf.cdo_2.0.0.v200906160459.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.emf.cdo.common_2.0.0.v200906160459.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.net4j_2.0.0.v200906160348.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.net4j.tcp_2.0.0.v200906160348.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.net4j.util_2.0.0.v200906160348.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/ant.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/antlr-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/antlr-runtime-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/antlr3-antTask.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/gts.modernization.grammar2Model.antTasks.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/gts.modernization.grammar2Model.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/gts.rubytl.launching.core.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/org.eclipse.emf.common_2.3.0.v200706262000.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/org.eclipse.emf.ecore_2.3.0.v200706262000.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/org.eclipse.emf.ecore.xmi_2.3.0.v200706262000.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/org.eclipse.gmt.modisco.jar"/>
+	<classpathentry kind="lib" path="/Grammar2Model.examples.PLSQL2ASTMModel/lib/stringtemplate-3.1b1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

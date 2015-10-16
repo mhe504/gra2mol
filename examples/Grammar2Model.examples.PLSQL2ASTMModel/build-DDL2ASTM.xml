@@ -62,7 +62,7 @@
     	<pathelement location="lib/org.eclipse.emf.common_2.3.0.v200706262000.jar"/>
         <pathelement location="lib/org.eclipse.emf.ecore.xmi_2.3.0.v200706262000.jar"/>
     	<pathelement location="lib/org.eclipse.emf.ecore_2.3.0.v200706262000.jar"/>
-     	<pathelement location="lib/gts.modernization.grammar2Model.antTasks.jar"/>
+     	<pathelement location="lib/antTasks.jar"/>
      	<pathelement location="lib/gts.modernization.grammar2Model.jar"/>
      	<pathelement location="lib/org.eclipse.gmt.modisco.jar"/>
      	<pathelement location="${binDir}/."/>

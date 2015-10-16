@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Core:Transformation xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Core="http://gts.inf.um.es/modernization/gra2mol/core" xmlns:Query="http://gts.inf.um.es/modernization/gra2mol/query">
+  <hashes name="columnTypeType">
+    <content fromElement="VARCHAR2" toElement="VARCHAR"/>
+    <content fromElement="NUMBER" toElement="NUMBER"/>
+    <content fromElement="DATE" toElement="DATE"/>
+  </hashes>
+  <rules xsi:type="Core:StandardRule" name="mapProject">
+    <queries variable="cu">
+      <filter type="INDIRECT">
+        <element name="CST" mark="true"/>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="files">
+        <value type="QUERY_RESULT" value="cu"/>
+      </inits>
+    </inits>
+    <from name="ccompilationUnit" alias="sf">
+      <filter variable="sf">
+        <filter>
+          <element name="ccompilationUnit" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::gastm::Project"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapCompilationUnit">
+    <queries variable="cts">
+      <filter>
+        <element name="cst"/>
+        <next type="INDIRECT">
+          <element name="data_definition"/>
+          <next>
+            <element name="create_table" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="css">
+      <filter>
+        <element name="cst"/>
+        <next type="INDIRECT">
+          <element name="data_definition"/>
+          <next>
+            <element name="create_sequence" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="language">
+        <value value="PL/SQL"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="fragments">
+        <value type="QUERY_RESULT" value="cts"/>
+      </inits>
+    </inits>
+    <from name="CST" alias="cst">
+      <filter variable="cst">
+        <filter>
+          <element name="CST" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::gastm::CompilationUnit"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapRDBTableDefinition">
+    <queries variable="cols">
+      <filter>
+        <element name="ct"/>
+        <next type="INDIRECT">
+          <element name="column" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="pks">
+      <filter>
+        <element name="ct"/>
+        <next type="INDIRECT">
+          <element name="constraint"/>
+          <next>
+            <element name="primary_key" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="cons">
+      <filter>
+        <element name="add_at"/>
+        <next>
+          <element name="constraint" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alter">
+      <filter type="INDIRECT">
+        <element name="alter_table" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="exists">
+          <element name="add"/>
+        </expression>
+        <next>
+          <element name="tabname"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="basename"/>
+            <parameters value="ct" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="conss">
+      <filter>
+        <element name="alter"/>
+        <next>
+          <element name="constraint" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="comms">
+      <filter type="INDIRECT">
+        <element name="comment" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="ID"/>
+          <parameters value="ct" valuePosition="0" extension="ID" extensionPosition="0"
+              type="QUERY_ACCESS"/>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="identifierName">
+        <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="identifierName">
+        <extension>nameString</extension>
+        <value type="QUERY_ACCESS" value="ct" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="Column">
+        <value type="QUERY_RESULT" value="cols"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="PrimKey">
+        <value type="QUERY_RESULT" value="pks"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="Constraint">
+        <value type="QUERY_RESULT" value="cons"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="Constraint">
+        <value type="QUERY_RESULT" value="conss"/>
+      </inits>
+    </inits>
+    <from name="create_table" alias="ct">
+      <filter variable="ct">
+        <filter>
+          <element name="create_table" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBTableDefinition"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapRDBColumnReference">
+    <queries variable="name">
+      <filter>
+        <element name="pk"/>
+        <next>
+          <element name="colname" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="table">
+      <filter type="INDIRECT">
+        <element name="create_table" mark="true"/>
+        <next type="INDIRECT">
+          <element name="primary_key"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="check">
+            <element name="this"/>
+            <parameters value="pk" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="colDef">
+      <filter>
+        <element name="table"/>
+        <next type="INDIRECT">
+          <element name="column" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="ID"/>
+            <parameters value="name" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <extension>nameString</extension>
+        <value type="QUERY_ACCESS" value="name" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="refersTo">
+        <value type="QUERY_RESULT" value="colDef"/>
+      </inits>
+    </inits>
+    <from name="primary_key" alias="pk">
+      <filter variable="pk">
+        <filter>
+          <element name="primary_key" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBColumnReference"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapRDBColumnDefinition">
+    <queries variable="notnull">
+      <filter>
+        <element name="col" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="ISNULL"/>
+          <parameters value="NOT NULL"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="isNumber">
+      <filter>
+        <element name="col" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="TYPE"/>
+          <parameters value="NUMBER"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="isVarchar">
+      <filter>
+        <element name="col" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionComplex" type="OR">
+          <expressions xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="TYPE"/>
+            <parameters value="VARCHAR"/>
+          </expressions>
+          <expressions xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="TYPE"/>
+            <parameters value="VARCHAR2"/>
+          </expressions>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="isDate">
+      <filter>
+        <element name="col" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="TYPE"/>
+          <parameters value="DATE"/>
+        </expression>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="identifierName">
+        <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="identifierName">
+        <extension>nameString</extension>
+        <value type="QUERY_ACCESS" value="col" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="type">
+          <value type="OPERATION_CREATION" value="astm::sastm::RDBNumber"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="type">
+              <value type="OPERATION_CREATION" value="astm::sastm::RDBVarchar"/>
+            </inits>
+            <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+              <inits xsi:type="Core:InitUnitGroup" type="IF">
+                <inits xsi:type="Core:InitUnitElement" element="type">
+                  <value type="OPERATION_CREATION" value="astm::sastm::RDBDate"/>
+                </inits>
+                <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+                  <element name="isDate"/>
+                </expression>
+              </inits>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+              <element name="isVarchar"/>
+            </expression>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+          <element name="isNumber"/>
+        </expression>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="NotNull">
+          <value value="false"/>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+          <element name="notnull"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="column" alias="col">
+      <filter variable="col">
+        <filter>
+          <element name="column" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBColumnDefinition"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapRDBUniqueKey">
+    <queries variable="colnames">
+      <filter>
+        <element name="cons"/>
+        <next>
+          <element name="unique_key"/>
+          <next>
+            <element name="colname" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alter_table">
+      <filter type="INDIRECT">
+        <element name="alter_table" mark="true"/>
+        <next>
+          <element name="constraint"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="check">
+            <element name="this"/>
+            <parameters value="cons" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="tabname">
+      <filter>
+        <element name="alter_table"/>
+        <next>
+          <element name="tabname" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="table">
+      <filter type="INDIRECT">
+        <element name="create_table" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="ID"/>
+          <parameters value="tabname" valuePosition="0" extension="basename" extensionPosition="0"
+              type="QUERY_ACCESS"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="columns">
+      <filter>
+        <element name="table"/>
+        <next>
+          <element name="column" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="ID"/>
+            <parameters value="colnames" valuePosition="i" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+      <control xsi:type="Query:QueryControlFor" variable="i" queryVariable="colnames"/>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="Column">
+        <value type="QUERY_RESULT" value="colnames"/>
+      </inits>
+    </inits>
+    <from name="constraint" alias="cons">
+      <filter variable="cons">
+        <filter>
+          <element name="constraint" mark="true"/>
+          <next>
+            <element name="unique_key"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBUniqueKey"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapUniqueColumn">
+    <queries variable="table">
+      <filter type="INDIRECT">
+        <element name="create_table" mark="true"/>
+        <next type="INDIRECT">
+          <element name="colname"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="check">
+            <element name="this"/>
+            <parameters value="cn" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="colDefA">
+      <filter>
+        <element name="table"/>
+        <next type="INDIRECT">
+          <element name="column" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="ID"/>
+            <parameters value="cn" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alterTable">
+      <filter type="INDIRECT">
+        <element name="alter_table" mark="true"/>
+        <next type="INDIRECT">
+          <element name="colname"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="check">
+            <element name="this"/>
+            <parameters value="cn" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alterName">
+      <filter>
+        <element name="alterTable"/>
+        <next type="INDIRECT">
+          <element name="foreign_key"/>
+          <next>
+            <element name="tabname" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="locTable">
+      <filter type="INDIRECT">
+        <element name="create_table" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="ID"/>
+          <parameters value="alterName" valuePosition="0" extension="basename" extensionPosition="0"
+              type="QUERY_ACCESS"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="colDefB">
+      <filter>
+        <element name="locTable"/>
+        <next type="INDIRECT">
+          <element name="column" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+            <element name="ID"/>
+            <parameters value="cn" valuePosition="0" extension="ID" extensionPosition="0"
+                type="QUERY_ACCESS"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="name">
+        <extension>nameString</extension>
+        <value type="QUERY_ACCESS" value="cn" extension="ID"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitGroup" type="IF">
+        <inits xsi:type="Core:InitUnitElement" element="refersTo">
+          <value type="QUERY_RESULT" value="colDefA"/>
+        </inits>
+        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+          <inits xsi:type="Core:InitUnitGroup" type="IF">
+            <inits xsi:type="Core:InitUnitElement" element="refersTo">
+              <value type="QUERY_RESULT" value="colDefB"/>
+            </inits>
+            <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+              <element name="locTable"/>
+            </expression>
+          </inits>
+        </inits>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="hasResults">
+          <element name="table"/>
+        </expression>
+      </inits>
+    </inits>
+    <from name="colname" alias="cn">
+      <filter variable="cn">
+        <filter>
+          <element name="colname" mark="true"/>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBColumnReference"/>
+  </rules>
+  <rules xsi:type="Core:StandardRule" name="mapForeignKey">
+    <queries variable="colname">
+      <filter>
+        <element name="cons"/>
+        <next>
+          <element name="foreign_key"/>
+          <next operation="POSITION">
+            <element name="colname" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="alt_table">
+      <filter type="INDIRECT">
+        <element name="alter_table" mark="true"/>
+        <next>
+          <element name="constraint"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="check">
+            <element name="this"/>
+            <parameters value="cons" type="VARIABLE"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="tabname">
+      <filter>
+        <element name="alt_table"/>
+        <next>
+          <element name="tabname" mark="true"/>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="table">
+      <filter type="INDIRECT">
+        <element name="create_table" mark="true"/>
+        <expression xsi:type="Query:FilterExpressionUnit" operation="eq">
+          <element name="ID"/>
+          <parameters value="tabname" valuePosition="0" extension="basename" extensionPosition="0"
+              type="QUERY_ACCESS"/>
+        </expression>
+      </filter>
+    </queries>
+    <queries variable="fcolname">
+      <filter>
+        <element name="cons"/>
+        <next>
+          <element name="foreign_key"/>
+          <next operation="POSITION" position="1">
+            <element name="colname" mark="true"/>
+          </next>
+        </next>
+      </filter>
+    </queries>
+    <inits>
+      <inits xsi:type="Core:InitUnitElement" element="ForeignKey">
+        <value type="QUERY_RESULT" value="fcolname"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="ParentKey">
+        <value type="QUERY_RESULT" value="colname"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="ParentTable">
+        <value type="OPERATION_CREATION" value="astm::sastm::RDBTableReference"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="ParentTable">
+        <extension>name</extension>
+        <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="ParentTable">
+        <extension>name</extension>
+        <extension>nameString</extension>
+        <value type="QUERY_ACCESS" value="tabname" extension="basename"/>
+      </inits>
+      <inits xsi:type="Core:InitUnitElement" element="ParentTable">
+        <extension>refersTo</extension>
+        <value type="QUERY_RESULT" value="table"/>
+      </inits>
+    </inits>
+    <from name="constraint" alias="cons">
+      <filter variable="cons">
+        <filter>
+          <element name="constraint" mark="true"/>
+          <next>
+            <element name="foreign_key"/>
+          </next>
+        </filter>
+      </filter>
+    </from>
+    <to name="astm::sastm::RDBRefIntegrity"/>
+  </rules>
+</Core:Transformation>

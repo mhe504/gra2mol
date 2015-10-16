@@ -1783,7 +1783,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="ACT_CODIGO" pos="34" line="151"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="151"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_ACT_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_ACT_CODIGO)'"
             pos="48" line="151"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="89" line="151"/>
       </children>
@@ -1797,7 +1797,7 @@
               line="153"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="153"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código O.T.R.I.'" pos="52"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo O.T.R.I.'" pos="52"
             line="153"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="69" line="153"/>
       </children>
@@ -1811,7 +1811,7 @@
               line="155"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="155"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la convocatoria (FK - OTG_CONVOCATORIAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la convocatoria (FK - OTG_CONVOCATORIAS)'"
             pos="52" line="155"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="104" line="155"/>
       </children>
@@ -1852,7 +1852,7 @@
               line="161"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="50" line="161"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Descripción'" pos="53"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Descripci�n'" pos="53"
             line="161"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="66" line="161"/>
       </children>
@@ -1880,7 +1880,7 @@
               line="165"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="51" line="165"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Financiación'" pos="54"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Financiaci�n'" pos="54"
             line="165"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="68" line="165"/>
       </children>
@@ -1944,7 +1944,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="LOG" pos="34" line="175"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="38" line="175"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código LOG'" pos="41"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo LOG'" pos="41"
             line="175"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="53" line="175"/>
       </children>
@@ -1969,7 +1969,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="LOG" pos="34" line="195"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="38" line="195"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Log'" pos="41"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Log'" pos="41"
             line="195"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="53" line="195"/>
       </children>
@@ -1983,7 +1983,7 @@
               line="197"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="197"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la Acitvidad (FK - OTG_ACTIVIDADES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la Acitvidad (FK - OTG_ACTIVIDADES)'"
             pos="52" line="197"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="99" line="197"/>
       </children>
@@ -1996,7 +1996,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="MOD_CODIGO" pos="34" line="199"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="199"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_MOD_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_MOD_CODIGO)'"
             pos="48" line="199"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="89" line="199"/>
       </children>
@@ -2010,7 +2010,7 @@
               line="201"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="201"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código O.T.R.I.'" pos="52"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo O.T.R.I.'" pos="52"
             line="201"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="69" line="201"/>
       </children>
@@ -2051,7 +2051,7 @@
               line="207"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="50" line="207"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Descripción'" pos="53"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Descripci�n'" pos="53"
             line="207"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="66" line="207"/>
       </children>
@@ -2079,7 +2079,7 @@
               line="211"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="51" line="211"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Financiación'" pos="54"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Financiaci�n'" pos="54"
             line="211"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="68" line="211"/>
       </children>
@@ -2130,7 +2130,7 @@
               line="235"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="52" line="235"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la actividad (FK - OTG_ACTIVIDADES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la actividad (FK - OTG_ACTIVIDADES)'"
             pos="55" line="235"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="102" line="235"/>
       </children>
@@ -2144,7 +2144,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PCO_ANO" pos="37" line="237"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="237"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Año de la convocatoria'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'A�o de la convocatoria'"
             pos="48" line="237"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="72" line="237"/>
       </children>
@@ -2158,7 +2158,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PCO_CODIGO" pos="37" line="239"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="48" line="239"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_PCO_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_PCO_CODIGO)'"
             pos="51" line="239"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="92" line="239"/>
       </children>
@@ -2172,7 +2172,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PCO_FFINA" pos="37" line="241"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="47" line="241"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha fin de aceptación O.T.R.I.'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha fin de aceptaci�n O.T.R.I.'"
             pos="50" line="241"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="84" line="241"/>
       </children>
@@ -2214,7 +2214,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PCO_FJUST" pos="37" line="247"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="47" line="247"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Plazo de Justificación'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Plazo de Justificaci�n'"
             pos="50" line="247"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="74" line="247"/>
       </children>
@@ -2229,7 +2229,7 @@
               line="249"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="52" line="249"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la Modalidad (FK -  OTG_MODALIDADES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la Modalidad (FK -  OTG_MODALIDADES)'"
             pos="55" line="249"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="103" line="249"/>
       </children>
@@ -2256,7 +2256,7 @@
               line="273"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="52" line="273"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la convocatoria (FK - OTG_CONVOCATORIAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la convocatoria (FK - OTG_CONVOCATORIAS)'"
             pos="55" line="273"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="107" line="273"/>
       </children>
@@ -2271,7 +2271,7 @@
               line="275"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="52" line="275"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del tipo de participación (FK - OTG_PTCONVOCATORIAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del tipo de participaci�n (FK - OTG_PTCONVOCATORIAS)'"
             pos="55" line="275"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="116" line="275"/>
       </children>
@@ -2286,7 +2286,7 @@
               line="277"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="52" line="277"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del tercero (FK - OTG_TERCEROS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del tercero (FK - OTG_TERCEROS)'"
             pos="55" line="277"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="95" line="277"/>
       </children>
@@ -2298,7 +2298,7 @@
               pos="17" line="282"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="37" line="282"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Modos de  participación (Terceros)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Modos de  participaci�n (Terceros)'"
             pos="40" line="282"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="76" line="282"/>
       </children>
@@ -2312,7 +2312,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PTC_CODIGO" pos="38" line="284"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="284"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno'" pos="52"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno'" pos="52"
             line="284"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="68" line="284"/>
       </children>
@@ -2350,7 +2350,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="LOG" pos="34" line="311"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="38" line="311"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Log'" pos="41"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Log'" pos="41"
             line="311"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="53" line="311"/>
       </children>
@@ -2364,7 +2364,7 @@
               line="313"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="313"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la actividad (FK - OTG_ACTIVIDADES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la actividad (FK - OTG_ACTIVIDADES)'"
             pos="52" line="313"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="99" line="313"/>
       </children>
@@ -2378,7 +2378,7 @@
               line="315"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="315"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del área productiva (FK - OTG_APRODUCTIVAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del �rea productiva (FK - OTG_APRODUCTIVAS)'"
             pos="52" line="315"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="104" line="315"/>
       </children>
@@ -2391,7 +2391,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_CODIGO" pos="34" line="317"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="317"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_SOL_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_SOL_CODIGO)'"
             pos="48" line="317"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="89" line="317"/>
       </children>
@@ -2405,7 +2405,7 @@
               line="319"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="319"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la convocatoria (FK - OTG_CONVOCATORIAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la convocatoria (FK - OTG_CONVOCATORIAS)'"
             pos="52" line="319"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="104" line="319"/>
       </children>
@@ -2433,7 +2433,7 @@
               line="323"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="323"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del contrato asociado.- Becas (FK - OTG_CONTRATOS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del contrato asociado.- Becas (FK - OTG_CONTRATOS)'"
             pos="52" line="323"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="111" line="323"/>
       </children>
@@ -2446,7 +2446,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_DURACION" pos="34" line="325"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="47" line="325"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Duración en meses'" pos="50"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Duraci�n en meses'" pos="50"
             line="325"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="69" line="325"/>
       </children>
@@ -2460,7 +2460,7 @@
               line="327"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="327"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del estado de la solicitud (FK - OTG_ESOLICITUDES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del estado de la solicitud (FK - OTG_ESOLICITUDES)'"
             pos="52" line="327"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="111" line="327"/>
       </children>
@@ -2499,7 +2499,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_FPUB" pos="34" line="333"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="43" line="333"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de publicación (Solicitudes aprobadas)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de publicaci�n (Solicitudes aprobadas)'"
             pos="46" line="333"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="92" line="333"/>
       </children>
@@ -2512,7 +2512,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_FRES" pos="34" line="335"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="43" line="335"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de resolución (Solicitudes Aprobadas)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de resoluci�n (Solicitudes Aprobadas)'"
             pos="46" line="335"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="91" line="335"/>
       </children>
@@ -2551,7 +2551,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_IMPES" pos="34" line="341"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="44" line="341"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe en euros de subvención .- Infraestructuras'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe en euros de subvenci�n .- Infraestructuras'"
             pos="47" line="341"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="99" line="341"/>
       </children>
@@ -2590,7 +2590,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_IMPPS" pos="34" line="347"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="44" line="347"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe en pesetas de subvención .- Infraestructuras'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe en pesetas de subvenci�n .- Infraestructuras'"
             pos="47" line="347"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="101" line="347"/>
       </children>
@@ -2616,7 +2616,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_IMPS" pos="34" line="351"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="43" line="351"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe subvención.- Infraestructuras'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Importe subvenci�n.- Infraestructuras'"
             pos="46" line="351"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="85" line="351"/>
       </children>
@@ -2643,7 +2643,7 @@
               line="355"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="355"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la Modalidad de la Beca (FK - OTG_MBECAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la Modalidad de la Beca (FK - OTG_MBECAS)'"
             pos="52" line="355"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="105" line="355"/>
       </children>
@@ -2657,7 +2657,7 @@
               line="357"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="357"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la modalidad (FK - OTG_MODALIDADES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la modalidad (FK - OTG_MODALIDADES)'"
             pos="52" line="357"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="99" line="357"/>
       </children>
@@ -2671,7 +2671,7 @@
               line="359"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="359"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de moneda (FK - OTG_MONEDAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de moneda (FK - OTG_MONEDAS)'"
             pos="52" line="359"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="89" line="359"/>
       </children>
@@ -2685,7 +2685,7 @@
               line="361"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="50" line="361"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de moneda subvención .- Infraestructuras (FK - OTG_MONEDAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de moneda subvenci�n .- Infraestructuras (FK - OTG_MONEDAS)'"
             pos="53" line="361"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="121" line="361"/>
       </children>
@@ -2699,7 +2699,7 @@
               line="363"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="50" line="363"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de moneda U.M.H. - Infraestructuras (FK - OTG_MONEDAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de moneda U.M.H. - Infraestructuras (FK - OTG_MONEDAS)'"
             pos="53" line="363"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="116" line="363"/>
       </children>
@@ -2713,7 +2713,7 @@
               line="365"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="365"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del plazo de convocatoria (FK - OTG_PCONVOCATORIAS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del plazo de convocatoria (FK - OTG_PCONVOCATORIAS)'"
             pos="52" line="365"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="112" line="365"/>
       </children>
@@ -2753,7 +2753,7 @@
               line="371"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="371"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del proyecto asociado.- Becas (FK - OTG_PROYECTOS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del proyecto asociado.- Becas (FK - OTG_PROYECTOS)'"
             pos="52" line="371"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="111" line="371"/>
       </children>
@@ -2767,7 +2767,7 @@
               line="373"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="373"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del proyecto solicitado asociado.- Becas (FK - OTG_SOLICITUDES)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del proyecto solicitado asociado.- Becas (FK - OTG_SOLICITUDES)'"
             pos="52" line="373"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="124" line="373"/>
       </children>
@@ -2781,7 +2781,7 @@
               line="375"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="375"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código del Macro-proyecto (FK - OTG_SUPERPROYECTOS)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo del Macro-proyecto (FK - OTG_SUPERPROYECTOS)'"
             pos="52" line="375"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="105" line="375"/>
       </children>
@@ -2807,7 +2807,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="SOL_TITULO" pos="34" line="379"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="379"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Título'" pos="48" line="379"/>
+        <children xsi:type="CST:Leaf" kind="STRING" value="'T�tulo'" pos="48" line="379"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="56" line="379"/>
       </children>
       <children xsi:type="CST:Node" kind="comment">
@@ -2820,7 +2820,7 @@
               line="381"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="49" line="381"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la Unidad Organizativa solicitante (FK - GEA_UORGANIZATIVA)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la Unidad Organizativa solicitante (FK - GEA_UORGANIZATIVA)'"
             pos="52" line="381"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="123" line="381"/>
       </children>
@@ -2846,7 +2846,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_ACCESO" pos="36" line="399"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="47" line="399"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Lugar donde se encuentra accesible la documentación'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Lugar donde se encuentra accesible la documentaci�n'"
             pos="50" line="399"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="103" line="399"/>
       </children>
@@ -2860,7 +2860,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_CODIGO" pos="36" line="401"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="47" line="401"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_CON_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_CON_CODIGO)'"
             pos="50" line="401"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="91" line="401"/>
       </children>
@@ -2875,7 +2875,7 @@
               line="403"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="51" line="403"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código O.T.R.I.'" pos="54"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo O.T.R.I.'" pos="54"
             line="403"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="71" line="403"/>
       </children>
@@ -2902,7 +2902,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_FCOR1" pos="36" line="407"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="46" line="407"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de 1º corrección'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de 1� correcci�n'"
             pos="49" line="407"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="73" line="407"/>
       </children>
@@ -2916,7 +2916,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_FCOR2" pos="36" line="409"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="46" line="409"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de 2º corrección'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de 2� correcci�n'"
             pos="49" line="409"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="73" line="409"/>
       </children>
@@ -2930,7 +2930,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_FPUB" pos="36" line="411"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="411"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de publicación'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de publicaci�n'"
             pos="48" line="411"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="70" line="411"/>
       </children>
@@ -2944,7 +2944,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_FRES" pos="36" line="413"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="45" line="413"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de resolución'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Fecha de resoluci�n'"
             pos="48" line="413"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="69" line="413"/>
       </children>
@@ -2958,7 +2958,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="CON_INFOR" pos="36" line="415"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="46" line="415"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Localización de información'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'Localizaci�n de informaci�n'"
             pos="49" line="415"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="78" line="415"/>
       </children>
@@ -2986,7 +2986,7 @@
               line="419"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="51" line="419"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código de la Publicación Oficial (FK - OTG_PUBLICAOFI)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo de la Publicaci�n Oficial (FK - OTG_PUBLICAOFI)'"
             pos="54" line="419"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="110" line="419"/>
       </children>
@@ -3014,7 +3014,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="LOG" pos="36" line="423"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="40" line="423"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Log'" pos="43"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Log'" pos="43"
             line="423"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="55" line="423"/>
       </children>
@@ -3039,7 +3039,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="PUB_CODIGO" pos="33" line="431"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="44" line="431"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Intero (Secuencia S_PUB_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Intero (Secuencia S_PUB_CODIGO)'"
             pos="47" line="431"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="87" line="431"/>
       </children>
@@ -3076,7 +3076,7 @@
           <children xsi:type="CST:Leaf" kind="ID" value="TER_CODIGO" pos="31" line="443"/>
         </children>
         <children xsi:type="CST:Leaf" kind="TOKEN" value="IS" pos="42" line="443"/>
-        <children xsi:type="CST:Leaf" kind="STRING" value="'Código Interno (Secuencia S_TER_CODIGO)'"
+        <children xsi:type="CST:Leaf" kind="STRING" value="'C�digo Interno (Secuencia S_TER_CODIGO)'"
             pos="45" line="443"/>
         <children xsi:type="CST:Leaf" kind="TOKEN" value=";" pos="86" line="443"/>
       </children>
