@@ -21,9 +21,9 @@
 	
 	<!-- PROPERTIES TO CONVERG G INTO Ge -->
 	<!-- Original grammar -->
-    <property name="grammar" value="${srcDir}/DDL.g3"/>
+    <property name="grammar" value="${srcDir}/MSSQL.g3"/>
 	<!-- Enriched grammar -->
-    <property name="grammarE" value="${genDir}/DDL.ge3"/>
+    <property name="grammarE" value="${genDir}/MSSQL.ge3"/>
 	<!-- Template used to enrich the grammar (dont change) -->
     <property name="templates" value="${templatesDir}/G2Ge.stg"/>
 
@@ -41,9 +41,9 @@
 	
 	<!-- PROPERTIES TO THE INTERPRETER -->
 	<!-- Name of the grammar -->
-    <property name="grammarName" value="DDL"/>
+    <property name="grammarName" value="MSSQL"/>
 	<!-- Name of the main rule of the grammar -->
-    <property name="grammarMainRule" value="data_definition"/>
+    <property name="grammarMainRule" value="sql_dump"/>
 	<!-- Gra2MoL definition -->
     <property name="sourceView" value="${srcDir}/extractASTMFromDDL.g2m"/>
 	<!-- Path to target metamodel -->
@@ -152,7 +152,7 @@
 					caseSensitive="true">
 			<!-- Filter the files to intepreter -->
 			<!-- <fileset dir="${srcDir}" includes="prueba.sql"/>-->
-			<fileset dir="plsql-files" includes="NEW_NOTGESTI_CONVO.sql"/>
+			<fileset dir="plsql-files" includes="sharepoint_AdminContent.sql"/>
 		</Gra2MoLDinamicInterpreter>
 	</target>
 	

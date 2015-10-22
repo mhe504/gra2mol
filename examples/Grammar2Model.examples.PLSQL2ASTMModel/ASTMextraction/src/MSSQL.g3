@@ -1,4 +1,4 @@
-grammar MSSQL; //To Parse SharePoint_AdminContent.sql
+grammar MSSQL; 
 
 //Keywords
 ALLOW_PAGE_LOCKS:	'ALLOW_PAGE_LOCKS';
@@ -79,14 +79,14 @@ QUOTE:		 	'\'';
 WS  :   ( ' '|  '\t' | '\r'| '\n') {$channel=HIDDEN;};
 
 //Parser Rules
-sql_dump :	 ((set_optition  | create_table | alter_table) GO)+ EOF;
+sql_dump :	 (set_optition  | create_table | alter_table)*;
 
 set_optition :	SET  (ANSI_NULLS | QUOTED_IDENTIFIER) ON;
 
 create_table :	CREATE TABLE OPEN_SQUARE_BRKT IDENTIFER CLOSE_SQUARE_BRKT OPEN_BRKT 
 		(column | computed_column)+
 		constraint?
-		table_opitions? CLOSE_BRKT ON OPEN_SQUARE_BRKT PRIMARY CLOSE_SQUARE_BRKT;
+		table_opitions? CLOSE_BRKT ON OPEN_SQUARE_BRKT PRIMARY CLOSE_SQUARE_BRKT GO;
 
 alter_table :	ALTER TABLE OPEN_SQUARE_BRKT IDENTIFER CLOSE_SQUARE_BRKT 
 		SET OPEN_BRKT OPTIONS EQUALS (ENABLE | DISABLE) CLOSE_BRKT;

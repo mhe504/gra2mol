@@ -25,7 +25,7 @@ model_to_model :astmDDL2kdm0 do |t|
 
   t.targets :package   => 'kdm',
             :metamodel => 'metamodels/kdm.ecore',
-            :model     => 'KDMextraction/models/resultadoKDMDDL.xmi'  
+            :model     => 'KDMextraction/models/finalKDM.xmi'  
             
   t.parameters :create_segments => true
 #t.debug_mode
