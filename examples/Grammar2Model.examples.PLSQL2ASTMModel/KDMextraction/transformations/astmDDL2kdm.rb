@@ -16,18 +16,20 @@ use_library 'KDMextraction/helpers/ddl_decorator_helper.rb'
   
 # Building Code Model for SQL Datatypes
 SQLBooleanType = Kdm::Code::BooleanType.new
-SQLStringType = Kdm::Code::StringType.new(:name => "sql varchar")  
-SQLIntegerType = Kdm::Code::IntegerType.new(:name => "sql int") 
-SQLDecimalType = Kdm::Code::DecimalType.new(:name => "sql decimal") 
-SQLDateType = Kdm::Code::DateType.new(:name => "sql date") 
+SQLStringType = Kdm::Code::StringType.new(:name => "String")  
+SQLIntegerType = Kdm::Code::IntegerType.new(:name => "Integer") 
+SQLFloatType = Kdm::Code::FloatType.new(:name => "Floating point number")
+SQLBitString = Kdm::Code::BitstringType.new(:name => "Binary data")
+SQLDateType = Kdm::Code::DateType.new(:name => "Date/Time") 
  
 SQLLanguageUnit = Kdm::Code::LanguageUnit.new
 SQLLanguageUnit.name = "SQL Datatypes"
 SQLLanguageUnit.codeElement << SQLBooleanType 
 SQLLanguageUnit.codeElement << SQLStringType
 SQLLanguageUnit.codeElement << SQLIntegerType
-SQLLanguageUnit.codeElement << SQLDecimalType
+SQLLanguageUnit.codeElement << SQLFloatType
 SQLLanguageUnit.codeElement << SQLDateType
+SQLLanguageUnit.codeElement << SQLBitString
 
 SQLCodeModel = Kdm::Code::CodeModel.new
 SQLCodeModel.name = "DDL Datatypes"

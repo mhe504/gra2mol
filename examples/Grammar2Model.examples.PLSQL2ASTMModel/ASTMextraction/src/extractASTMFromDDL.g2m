@@ -62,21 +62,46 @@ rule 'mapRDBColumnDefinition'
 	from column col
 	to astm::sastm::RDBColumnDefinition
 	queries
-		notnull   : /col/#column_optitions{NOT.exists};	
-		isNumber  : /col/#data_type{INT.exists || FLOAT.exists || BIT.exists};
-		isVarchar : /col/#data_type{VARCHAR.exists || UNIQUEIDENTIFIER.exists || VARBINARY.exists};
-		isDate    : /col/#data_type{DATE_TIME.exists || DATETIME.exists};
+		notnull   	: /col/#column_optitions{NOT.exists};	
+		isString	: /col/#data_type{VARCHAR.exists || VARBINARY.exists};
+		isInt		: /col/#data_type{INT.exists};
+		isFloat		: /col/#data_type{FLOAT.exists};
+		isTimestamp	: /col/#data_type{DATE_TIME.exists || DATETIME.exists};
+		isBoolean	: /col/#data_type{BIT.exists};
+		isFile		: /col/#data_type{XML.exists};
+		isLong		: /col/#data_type{BIGINT.exists};
+		isUID	 	: /col/#data_type{UNIQUEIDENTIFIER.exists};
 	mappings
 		identifierName = new astm::gastm::Name;
 		identifierName.nameString  = col.IDENTIFER;
-		if(isNumber.hasResults) then
-			type = new astm::sastm::RDBNumber;
+		if(isString.hasResults) then
+			type = new astm::sastm::RDBString;
 		else
-			if(isVarchar.hasResults) then
-				type = new astm::sastm::RDBVarchar;
+			if(isInt.hasResults) then
+				type = new astm::sastm::RDBInt;
 			else
-				if(isDate.hasResults) then
-					type = new astm::sastm::RDBDate;
+				if(isFloat.hasResults) then
+					type = new astm::sastm::RDBFloat;
+				else
+					if(isTimestamp.hasResults) then
+						type = new astm::sastm::RDBTimestamp;
+					else
+						if(isBoolean.hasResults) then
+							type = new astm::sastm::RDBBoolean;
+						else
+							if(isFile.hasResults) then
+								type = new astm::sastm::RDBBFile;
+							else
+								if(isLong.hasResults) then
+									type = new astm::sastm::RDBLong;
+								else
+									if(isUID.hasResults) then
+										type = new astm::sastm::RDBRowid;
+									end_if
+								end_if
+							end_if
+						end_if
+					end_if
 				end_if
 			end_if
 		end_if

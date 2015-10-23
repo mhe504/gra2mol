@@ -93,26 +93,7 @@
         </next>
       </filter>
     </queries>
-    <queries variable="isNumber">
-      <filter>
-        <element name="col"/>
-        <next>
-          <element name="data_type" mark="true"/>
-          <expression xsi:type="Query:FilterExpressionComplex" type="OR">
-            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
-              <element name="INT"/>
-            </expressions>
-            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
-              <element name="FLOAT"/>
-            </expressions>
-            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
-              <element name="BIT"/>
-            </expressions>
-          </expression>
-        </next>
-      </filter>
-    </queries>
-    <queries variable="isVarchar">
+    <queries variable="isString">
       <filter>
         <element name="col"/>
         <next>
@@ -122,16 +103,35 @@
               <element name="VARCHAR"/>
             </expressions>
             <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
-              <element name="UNIQUEIDENTIFIER"/>
-            </expressions>
-            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
               <element name="VARBINARY"/>
             </expressions>
           </expression>
         </next>
       </filter>
     </queries>
-    <queries variable="isDate">
+    <queries variable="isInt">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="INT"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isFloat">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="FLOAT"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isTimestamp">
       <filter>
         <element name="col"/>
         <next>
@@ -147,6 +147,50 @@
         </next>
       </filter>
     </queries>
+    <queries variable="isBoolean">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="BIT"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isFile">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="XML"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isLong">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="BIGINT"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="isUID">
+      <filter>
+        <element name="col"/>
+        <next>
+          <element name="data_type" mark="true"/>
+          <expression xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+            <element name="UNIQUEIDENTIFIER"/>
+          </expression>
+        </next>
+      </filter>
+    </queries>
     <inits>
       <inits xsi:type="Core:InitUnitElement" element="identifierName">
         <value type="OPERATION_CREATION" value="astm::gastm::Name"/>
@@ -157,30 +201,82 @@
       </inits>
       <inits xsi:type="Core:InitUnitGroup" type="IF">
         <inits xsi:type="Core:InitUnitElement" element="type">
-          <value type="OPERATION_CREATION" value="astm::sastm::RDBNumber"/>
+          <value type="OPERATION_CREATION" value="astm::sastm::RDBString"/>
         </inits>
         <inits xsi:type="Core:InitUnitGroup" type="ELSE">
           <inits xsi:type="Core:InitUnitGroup" type="IF">
             <inits xsi:type="Core:InitUnitElement" element="type">
-              <value type="OPERATION_CREATION" value="astm::sastm::RDBVarchar"/>
+              <value type="OPERATION_CREATION" value="astm::sastm::RDBInt"/>
             </inits>
             <inits xsi:type="Core:InitUnitGroup" type="ELSE">
               <inits xsi:type="Core:InitUnitGroup" type="IF">
                 <inits xsi:type="Core:InitUnitElement" element="type">
-                  <value type="OPERATION_CREATION" value="astm::sastm::RDBDate"/>
+                  <value type="OPERATION_CREATION" value="astm::sastm::RDBFloat"/>
+                </inits>
+                <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+                  <inits xsi:type="Core:InitUnitGroup" type="IF">
+                    <inits xsi:type="Core:InitUnitElement" element="type">
+                      <value type="OPERATION_CREATION" value="astm::sastm::RDBTimestamp"/>
+                    </inits>
+                    <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+                      <inits xsi:type="Core:InitUnitGroup" type="IF">
+                        <inits xsi:type="Core:InitUnitElement" element="type">
+                          <value type="OPERATION_CREATION" value="astm::sastm::RDBBoolean"/>
+                        </inits>
+                        <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+                          <inits xsi:type="Core:InitUnitGroup" type="IF">
+                            <inits xsi:type="Core:InitUnitElement" element="type">
+                              <value type="OPERATION_CREATION" value="astm::sastm::RDBBFile"/>
+                            </inits>
+                            <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+                              <inits xsi:type="Core:InitUnitGroup" type="IF">
+                                <inits xsi:type="Core:InitUnitElement" element="type">
+                                  <value type="OPERATION_CREATION" value="astm::sastm::RDBLong"/>
+                                </inits>
+                                <inits xsi:type="Core:InitUnitGroup" type="ELSE">
+                                  <inits xsi:type="Core:InitUnitGroup" type="IF">
+                                    <inits xsi:type="Core:InitUnitElement" element="type">
+                                      <value type="OPERATION_CREATION" value="astm::sastm::RDBRowid"/>
+                                    </inits>
+                                    <expression xsi:type="Query:FilterExpressionUnit"
+                                        operation="HASRESULTS">
+                                      <element name="isUID"/>
+                                    </expression>
+                                  </inits>
+                                </inits>
+                                <expression xsi:type="Query:FilterExpressionUnit"
+                                    operation="HASRESULTS">
+                                  <element name="isLong"/>
+                                </expression>
+                              </inits>
+                            </inits>
+                            <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+                              <element name="isFile"/>
+                            </expression>
+                          </inits>
+                        </inits>
+                        <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+                          <element name="isBoolean"/>
+                        </expression>
+                      </inits>
+                    </inits>
+                    <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
+                      <element name="isTimestamp"/>
+                    </expression>
+                  </inits>
                 </inits>
                 <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
-                  <element name="isDate"/>
+                  <element name="isFloat"/>
                 </expression>
               </inits>
             </inits>
             <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
-              <element name="isVarchar"/>
+              <element name="isInt"/>
             </expression>
           </inits>
         </inits>
         <expression xsi:type="Query:FilterExpressionUnit" operation="HASRESULTS">
-          <element name="isNumber"/>
+          <element name="isString"/>
         </expression>
       </inits>
       <inits xsi:type="Core:InitUnitGroup" type="IF">
