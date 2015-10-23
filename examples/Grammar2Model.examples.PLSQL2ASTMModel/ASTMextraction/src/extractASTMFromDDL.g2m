@@ -64,7 +64,7 @@ rule 'mapRDBColumnDefinition'
 	queries
 		notnull   : /col/#column_optitions{NOT.exists};	
 		isNumber  : /col/#data_type{INT.exists || FLOAT.exists || BIT.exists};
-		isVarchar : /col/#data_type{VARCHAR.exists || UNIQUEIDENTIFIER.exists};
+		isVarchar : /col/#data_type{VARCHAR.exists || UNIQUEIDENTIFIER.exists || VARBINARY.exists};
 		isDate    : /col/#data_type{DATE_TIME.exists || DATETIME.exists};
 	mappings
 		identifierName = new astm::gastm::Name;
@@ -91,14 +91,14 @@ end_rule
 -----------------------------------------------------
 
 rule 'mapRDBColumnReference'
-	from primary_key pk
+	from constraint pk
 	to astm::sastm::RDBColumnReference
 	queries
-		name   : /pk/#colname;
-		table  : //#create_table//primary_key{this.check(pk)};
-		colDef : /table//#column{ID.eq(name.ID)};
+		table  : //#create_table//constraint{this.check(pk)};
+		colref : /pk/#ref;
+		colDef : /table//#column{IDENTIFER.eq(colref.IDENTIFER)};	
 	mappings
 		name = new astm::gastm::Name;
-		name.nameString = name.ID;
+		name.nameString = pk.IDENTIFER;
 		refersTo = colDef;
 end_rule

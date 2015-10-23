@@ -21,11 +21,11 @@ end
 model_to_model :astmDDL2kdm0 do |t|
   t.sources :package   => 'astm',
             :metamodel => 'metamodels/astm.ecore',
-            :model     => 'KDMextraction/models/resultadoDDL.xmi'  
+            :model     => 'resultadoDDL.xmi'  
 
   t.targets :package   => 'kdm',
             :metamodel => 'metamodels/kdm.ecore',
-            :model     => 'KDMextraction/models/finalKDM.xmi'  
+            :model     => 'finalKDM.xmi'  
             
   t.parameters :create_segments => true
 #t.debug_mode

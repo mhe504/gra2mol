@@ -124,6 +124,9 @@
             <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
               <element name="UNIQUEIDENTIFIER"/>
             </expressions>
+            <expressions xsi:type="Query:FilterExpressionUnit" operation="EXISTS">
+              <element name="VARBINARY"/>
+            </expressions>
           </expression>
         </next>
       </filter>
@@ -191,25 +194,25 @@
     </inits>
   </rules>
   <rules name="mapRDBColumnReference">
-    <from name="primary_key" alias="pk"/>
+    <from name="constraint" alias="pk"/>
     <to name="astm::sastm::RDBColumnReference"/>
-    <queries variable="name">
-      <filter>
-        <element name="pk"/>
-        <next>
-          <element name="colname" mark="true"/>
-        </next>
-      </filter>
-    </queries>
     <queries variable="table">
       <filter type="INDIRECT">
         <element name="create_table" mark="true"/>
         <next type="INDIRECT">
-          <element name="primary_key"/>
+          <element name="constraint"/>
           <expression xsi:type="Query:FilterExpressionUnit" operation="CHECK">
             <element name="this"/>
             <parameters value="pk" type="VARIABLE"/>
           </expression>
+        </next>
+      </filter>
+    </queries>
+    <queries variable="colref">
+      <filter>
+        <element name="pk"/>
+        <next>
+          <element name="ref" mark="true"/>
         </next>
       </filter>
     </queries>
@@ -219,8 +222,8 @@
         <next type="INDIRECT">
           <element name="column" mark="true"/>
           <expression xsi:type="Query:FilterExpressionUnit">
-            <element name="ID"/>
-            <parameters value="name" valuePosition="0" extension="ID" extensionPosition="0"
+            <element name="IDENTIFER"/>
+            <parameters value="colref" valuePosition="0" extension="IDENTIFER" extensionPosition="0"
                 type="QUERY_ACCESS"/>
           </expression>
         </next>
@@ -232,7 +235,7 @@
       </inits>
       <inits xsi:type="Core:InitUnitElement" element="name">
         <extension>nameString</extension>
-        <value type="QUERY_ACCESS" value="name" extension="ID"/>
+        <value type="QUERY_ACCESS" value="pk" extension="IDENTIFER"/>
       </inits>
       <inits xsi:type="Core:InitUnitElement" element="refersTo">
         <value type="QUERY_RESULT" value="colDef"/>
