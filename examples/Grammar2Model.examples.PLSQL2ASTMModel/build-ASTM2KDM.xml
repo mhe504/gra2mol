@@ -9,7 +9,7 @@
 		
 		<rubytl.rakefile ruby="ruby" rubytl="C:\rubytl">
 			<raketask name="astmDDL2kdm0" />
-			<project path="C:\Users\martyn.ellison\workspace-old\Grammar2Model.examples.PLSQL2ASTMModel " />
+			<project path=" " />
 			<rakefile path="KDMextraction\tasks\m2m.rake" />
 		</rubytl.rakefile>
 		
